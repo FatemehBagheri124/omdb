@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY OMDB</title>
+    <link  rel="stylesheet" href="css/bootstrap.min.css" >
+    
+    
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #load{
+          width: 100%;
+          height: 100%;
+          background-color: rgba(157, 192, 157, 0.788);
+          position: fixed;
+          z-index: 10;
+         display: none; 
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+
+          .loader {
+            border: 16px solid #978d8d;
+            border-top: 16px solid #34db7a; 
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+            position: fixed;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            font-size: 3rem;
+}
+
+
+    </style>
+</head>
+<body>
+  <div id="load">
+    <div class="loader"></div>
+</div>
+
+  <nav class="navbar navbar-light" style="background-color: #a9e9a9;">
+    <a class="navbar-brand">Home</a>
+    <form class="form-inline " id="search">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">OMDb API</h1>
+      <p class="lead">The Open Movie Database.</p><br>
+      <small>Fatemeh Bagheri</small>
+    </div>
+  </div>
+<div class="container-fluid">
+    <div class="row" id="movies">
+      <div class="col-md-3">
+      
+    </div>
+    </div>
+  </div>
+  <!-- Modal -->
+<div class="modal fade " id="details" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered " role="document">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body ">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container pt-4">
+<div class="row">
+  <div class="col-12">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination flex-wrap">
+
+      </ul>
+    </nav>
+  </div>
+</div>
+</div>
+<script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
